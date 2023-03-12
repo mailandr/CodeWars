@@ -6,14 +6,16 @@ function toCamelCase(str) {
   const wordsUpper = [];
 
   for (const x of newText1) {
-    wordsUpper.push(x[0].toUpperCase() + x.slice(1));
+    wordsUpper.push(x.replace(x[0], x[0].toUpperCase()));
   }
-  if (str[0] === str[0].toLowerCase) {
-    console.log(wordsUpper[0].toLowerCase + wordsUpper.slice(1));
-  } else {
-    console.log(wordsUpper.join(''));
+  let finishedText = wordsUpper.join('');
+
+  if (str[0] !== finishedText[0]) {
+    const finText = finishedText.replace(finishedText[0], finishedText[0].toLowerCase());
+    return finText;
   }
+  return finishedText;
 }
 
-toCamelCase(text1);
-toCamelCase(text2);
+console.log(toCamelCase(text1));
+console.log(toCamelCase(text2));
